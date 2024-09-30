@@ -7,4 +7,5 @@ public interface IEmailService
 {
 	bool SendEmail(EmailRequest emailRequest);
 	EmailRequest UnpackEmailRequest(ServiceBusReceivedMessage message);
+	Task SendConfirmationEmail(string toEmail, string name);
 }
