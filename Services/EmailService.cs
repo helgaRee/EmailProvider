@@ -33,7 +33,7 @@ public class EmailService(EmailClient emailClient, ILogger<EmailService> logger)
 			string jsonMessage = Encoding.UTF8.GetString(message.Body.ToArray());
 
 			// Deserialisera till FormSubmission-objekt
-			var formSubmission = JsonConvert.DeserializeObject<FormSubmission>(jsonMessage);
+			var formSubmission = JsonConvert.DeserializeObject<ContactFormSubmission>(jsonMessage);
 
 			if (formSubmission != null)
 			{
